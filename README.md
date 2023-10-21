@@ -45,11 +45,12 @@ XSSer runs on many platforms. It requires Python (3.x) and the following librari
 
 On Debian-based systems (ex: Ubuntu), run: 
 
-    sudo apt-get install python3-pycurl python3-bs4 python3-geoip python3-gi python3-cairocffi python3-selenium firefoxdriver
+    doas pkg install py39-pycurl py39-pygeoip pygobject3-common py39-gobject3 py39-cairocffi py39-selenium py39-beautifulsoup py39-pycurl
 
-On other systems such as: Kali, Ubuntu, ArchLinux, ParrotSec, Fedora, etc... also run:
+If you need to build the GUI version this will also need to be installed:
 
-    sudo pip3 install pycurl bs4 pygeoip gobject cairocffi selenium
+    doas pkg install py39-pillow
+
 
 ####  Source libs:
 
