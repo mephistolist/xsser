@@ -1,4 +1,4 @@
-  ![XSSer](https://xsser.03c8.net/xsser/thehive1.png "XSSer")
+   ![XSSer](https://xsser.03c8.net/xsser/thehive1.png "XSSer")
 
 ----------
 
@@ -33,24 +33,13 @@
 
 #### Installing:
 
-XSSer runs on many platforms. It requires Python (3.x) and the following libraries:
-
-    - python3-pycurl - Python bindings to libcurl (Python 3)
-    - python3-bs4 - error-tolerant HTML parser for Python 3
-    - python3-geoip - Python3 bindings for the GeoIP IP-to-country resolver library
-    - python3-gi - Python 3 bindings for gobject-introspection libraries
-    - python3-cairocffi - cffi-based cairo bindings for Python (Python3)
-    - python3-selenium - Python3 bindings for Selenium
-    - firefoxdriver - Firefox WebDriver support
-
-On Debian-based systems (ex: Ubuntu), run: 
+XSSer runs on many platforms. This install requires FreeBSD, Python 3.9 and you may install its dependencies with the following: 
 
     doas pkg install py39-pycurl py39-pygeoip pygobject3-common py39-gobject3 py39-cairocffi py39-selenium py39-beautifulsoup py39-pycurl
 
-If you need to build the GUI version this will also need to be installed:
+If you wish to use the GUI version, also run:
 
     doas pkg install py39-pillow
-
 
 ####  Source libs:
 
@@ -88,4 +77,3 @@ in the [LICENSE](./docs/LICENSE) file.
   ![XSSer](https://xsser.03c8.net/xsser/thehive8.png "XSSer [HTTP DOM] Exploit")
 
   ![XSSer](https://xsser.03c8.net/xsser/zika4.png "XSSer GeoMap")
-
