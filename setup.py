@@ -29,8 +29,6 @@ core_dir = '/usr/local/etc/xsser/core'
 doc_dir = '/usr/local/etc/xsser/doc'
 gtk_dir = '/usr/local/etc/xsser/gtk'
 
-core_files = ['crawler.py', 'curlcontrol.py', 'dork.py']
-
 for path in [config_dir, core_dir, doc_dir, gtk_dir]:
     os.makedirs(path, exist_ok=True)
 
