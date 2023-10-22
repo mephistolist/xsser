@@ -35,7 +35,7 @@
 
 XSSer runs on many platforms. This install requires FreeBSD, Python 3.9 and you may install its dependencies with the following: 
 
-    doas pkg install py39-pycurl py39-pygeoip pygobject3-common py39-gobject3 py39-cairocffi py39-selenium py39-beautifulsoup py39-pycurl
+    doas pkg install py39-pycurl py39-pygeoip pygobject3-common py39-gobject3 py39-cairocffi py39-selenium py39-beautifulsoup py39-setuptools
 
 If you wish to use the GUI version, also run:
 
