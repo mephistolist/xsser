@@ -20,8 +20,37 @@ with xsser; if not, write to the Free Software Foundation, Inc., 51
 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 """
 from setuptools import setup
+from setuptools.command.install import install
 import os
-data_files = []
+import shutil
+
+config_dir = '/usr/local/etc/xsser'
+core_dir = '/usr/local/etc/xsser/core'
+doc_dir = '/usr/local/etc/xsser/doc'
+gtk_dir = '/usr/local/etc/xsser/gtk'
+
+core_files = ['crawler.py', 'curlcontrol.py', 'dork.py']
+
+for path in [config_dir, core_dir, doc_dir, gtk_dir]:
+    os.makedirs(path, exist_ok=True)
+
+dirs = ['core', 'doc', 'gtk']
+
+for i in dirs:
+    local_dir = i  # Assuming 'core' is in the current working directory
+    target_dir = '/usr/local/etc/xsser/' + i
+
+    if os.path.exists(local_dir):
+        for item in os.listdir(local_dir):
+            local_item = os.path.join(local_dir, item)
+            target_item = os.path.join(target_dir, item)
+            # Check if the item is a file and copy it
+            if os.path.isfile(local_item):
+                shutil.copy(local_item, target_item)
+            # Check if the item is a directory and copy it recursively
+            elif os.path.isdir(local_item):
+                shutil.copytree(local_item, target_item, dirs_exist_ok=True)
+
 image_files = []
 doc_files = []
 gtk_doc_files = []
@@ -41,7 +70,7 @@ setup(
     name = "xsser",
     version = "1.8.4",
     packages = ['core', 'core.fuzzing', 'core.post', 'core.driver'],
-    data_files = [('/usr/share/doc/xsser/', doc_files), 
+    data_files = [('/usr/share/doc/xsser/', doc_files),
                   ('/usr/share/xsser/gtk/images/', data_files),
                   ('/usr/share/xsser/gtk/docs/', gtk_doc_files),
                   ('/usr/share/applications/', gtk_app_files),
